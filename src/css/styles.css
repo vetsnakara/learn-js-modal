@@ -81,6 +81,16 @@ main {
   animation: point 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
+.wave-hand {
+  transform-origin: bottom center;
+}
+
+.modal-is-open .wave-hand {
+  animation:
+    zoom 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+    wave 1s ease-out 0.55s;
+}
+
 /* Modal */
 .modal-overlay {
   position: fixed;
@@ -143,6 +153,7 @@ main {
   border-color: var(--magenta-600);
 }
 
+/* Animations */
 @keyframes point {
   0% {
     opacity: 0;
@@ -152,5 +163,38 @@ main {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.25);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg)
+  }
+  20% {
+    transform: rotate(15deg)
+  }
+  40% {
+    transform: rotate(-15deg)
+  }
+  60% {
+    transform: rotate(15deg)
+  }
+  80% {
+    transform: rotate(-15deg)
+  }
+  100% {
+    transform: rotate(0deg)
   }
 }
