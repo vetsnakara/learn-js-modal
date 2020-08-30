@@ -78,6 +78,7 @@ main {
   margin-right: auto;
   margin-left: auto;
   color: var(--magenta-300);
+  animation: point 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
 
 /* Modal */
@@ -140,4 +141,16 @@ main {
   opacity: 1;
   background: var(--magenta-300);
   border-color: var(--magenta-600);
+}
+
+@keyframes point {
+  0% {
+    opacity: 0;
+    transform: translateY(3em);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
